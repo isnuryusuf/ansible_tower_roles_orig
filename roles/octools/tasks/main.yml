@@ -40,7 +40,7 @@
 
 - name: login as admin to add user to project as admin
   command: oc login -u system:admin
-  when: autoscale == false
+  when: autoscale == true
 
 - name: create resource limits for the project
   command: oc create -f /tmp/resourcelimits.yaml -n {{ projectname }}
